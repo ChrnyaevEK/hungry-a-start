@@ -158,8 +158,8 @@ void ControllerMain::draw(sf::RenderWindow* window) {
 	sf::Color enemyColor(255, 0, 0, 255);
 	sf::Color enemyShelfColor(255, 0, 0, 70);
 
-	sf::Color finishColor(255, 112, 67, 255);
-	sf::Color finishShelfColor(216, 67, 21, 70);
+	sf::Color finishColor(0, 255, 0, 255);
+	sf::Color finishShelfColor(102, 187, 106, 70);
 
 	sf::Color cellColor(117, 117, 117, 255);
 	sf::Color shelfColor(66, 66, 66, 255);
@@ -228,13 +228,8 @@ void ControllerMain::draw(sf::RenderWindow* window) {
 	window->draw(enemyShelf);
 
 	// Finish
-	sf::RectangleShape finish(sf::Vector2f(10.f, 10.f));
-	finish.setPosition(sf::Vector2f(pFinish.x * 10.f, pFinish.y * 10.f));
+	sf::RectangleShape finish(sf::Vector2f(12.f, 12.f));
+	finish.setPosition(sf::Vector2f(pFinish.x * 10.f - 1.f, pFinish.y * 10.f - 1.f));
 	finish.setFillColor(finishColor);
 	window->draw(finish);
-
-	sf::RectangleShape finishShelf(sf::Vector2f(30.f, 30.f));
-	finishShelf.setPosition(sf::Vector2f(pFinish.x * 10.f - 10.f, pFinish.y * 10.f - 10.f));
-	finishShelf.setFillColor(finishShelfColor);
-	window->draw(finishShelf);
 }
